@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom'
 
 const StyledWrapper = styled.div`
     background-color: rgba(255, 255, 255, 0.7);
@@ -28,7 +29,7 @@ const StyledName = styled.h2`
 const MemberItem = ({ member }) => (
     <StyledWrapper>
         <StyledName>
-            {member.first_name}&nbsp;{member.last_name}
+            <Link to={'/members/' + member.id}>{member.first_name}&nbsp;{member.last_name}</Link>
         </StyledName>
     </StyledWrapper>
 );
