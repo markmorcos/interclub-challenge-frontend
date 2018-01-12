@@ -19,9 +19,7 @@ class MemberDetails extends Component {
         if (loading) return <Loading />;
         return (
             <span>
-                <Title>{member.name}</Title>
-                <ListItem>ID: {member.id}</ListItem>
-                <ListItem>Number: {member.number}</ListItem>
+                <Title>{member.number + '. ' + member.name}</Title>
                 {member.email && <ListItem>Email:&nbsp;<a href={'mailto:' + member.email} target="_blank">{member.email}</a></ListItem>}
             </span>
         );
