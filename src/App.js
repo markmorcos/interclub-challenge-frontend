@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import { Switch, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-import MemberList from './MemberList';
-import MemberDetails from './MemberDetails';
+import Router from './Router';
 
 const StyledWrapper = styled.div`
     width: 100vw;
@@ -30,11 +29,7 @@ export default class App extends Component {
                 <StyledLogoLink>
                     <Link to ='/'><img alt='logo' src='/assets/inv_logo_48x48.png' /></Link>
                 </StyledLogoLink>
-                <Switch>
-                    <Route exact path='/' component={MemberList} />
-                    <Route exact path='/members' component={MemberList} />
-                    <Route exact path='/members/:memberId' component={MemberDetails} />
-                </Switch>
+                <Router />
             </StyledWrapper>
         );
     }
